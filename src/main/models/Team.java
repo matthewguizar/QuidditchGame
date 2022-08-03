@@ -58,11 +58,11 @@ Question: the constants are final, so why can't we make them public? It's not po
     }
 
     public String[] getChasers() {
-        return this.chasers;
+        return Arrays.copyOf(chasers, chasers.length);
     }
 
     public void setChasers(String[] chasers) {
-        this.chasers = chasers;
+        this.chasers = Arrays.copyOf(chasers, chasers.length);
     }
     
 
@@ -82,7 +82,7 @@ Question: the constants are final, so why can't we make them public? It's not po
     @Override
     public String toString() {
         return 
-            "House: " + this.house + "\n" +
+              "House: " + this.house + "\n" +
             "Keeper: " + this.keeper + "\n" +         
             "Seeker: "  + this.seeker + "\n" +         
             "Chasers: " + Arrays.toString(this.chasers) + "\n"; 
