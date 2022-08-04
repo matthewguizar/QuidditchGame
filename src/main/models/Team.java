@@ -100,6 +100,10 @@ Question: the constants are final, so why can't we make them public? It's not po
         // return false;
     } 
 
+    public static boolean hasBlank(String[] array) {
+        return false;
+    }
+
 
     @Override
     public String toString() {
