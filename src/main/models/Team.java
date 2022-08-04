@@ -20,6 +20,17 @@ Question: the constants are final, so why can't we make them public? It's not po
 */
 
     public Team(String house, String keeper, String seeker, String[] chasers){
+        if (house == null || keeper == null || seeker == null) {
+            throw new IllegalArgumentException("Field values cannot be null");
+        }
+
+        if (house.isBlank() || keeper.isBlank()|| seeker.isBlank()){
+            throw new IllegalArgumentException("Field values cannot be blank");
+        }
+
+        if (chasers.length != 3){
+            throw new IllegalArgumentException("Must have three chasers");
+        }
         this.house = house;
         this.keeper = keeper;
         this.seeker = seeker;
@@ -77,6 +88,17 @@ Question: the constants are final, so why can't we make them public? It's not po
      public static String getPositionKeeper() {
          return POSITION_KEEPER;
      }
+
+    public static boolean hasNull(String[] array) {
+        return Arrays.stream(array).anyMatch((element) -> element == null);
+        
+        // for (int i = 0; i < array.length; i++) {
+        //     if (array[i] == null){
+        //         return true;
+        //     } 
+        // }
+        // return false;
+    } 
 
 
     @Override
