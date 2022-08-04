@@ -14,4 +14,10 @@ public class TeamTest {
         assertTrue(Team.hasNull(chasers));
     }
 
+    @Test
+    public void hasBlankTest(){
+        String[] chasers = {"  ", "Ginny", "Katie"};
+        assertTrue(Team.hasBlank(chasers));
+    }
+
 }
