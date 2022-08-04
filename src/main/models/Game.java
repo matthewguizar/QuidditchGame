@@ -13,6 +13,9 @@ public class Game {
         scoreboard.put(new Team(away), 0);
     }
 
+    public Integer getScore(Team team){
+        return scoreboard.get(team);
+    }
     
 
 }
