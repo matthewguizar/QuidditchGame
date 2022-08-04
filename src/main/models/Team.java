@@ -31,6 +31,10 @@ Question: the constants are final, so why can't we make them public? It's not po
         if (chasers.length != 3){
             throw new IllegalArgumentException("Must have three chasers");
         }
+
+        if (hasNull(chasers) || hasBlank(chasers)){
+            throw new IllegalArgumentException("Illegal elements");
+        }
         this.house = house;
         this.keeper = keeper;
         this.seeker = seeker;
@@ -49,6 +53,7 @@ Question: the constants are final, so why can't we make them public? It's not po
     }
 
     public void setHouse(String house) {
+        checkArgument(house);
         this.house = house;
     }
 
@@ -57,6 +62,7 @@ Question: the constants are final, so why can't we make them public? It's not po
     }
 
     public void setKeeper(String keeper) {
+        checkArgument(keeper);
         this.keeper = keeper;
     }
 
@@ -65,6 +71,7 @@ Question: the constants are final, so why can't we make them public? It's not po
     }
 
     public void setSeeker(String seeker) {
+        checkArgument(seeker);
         this.seeker = seeker;
     }
 
@@ -73,7 +80,16 @@ Question: the constants are final, so why can't we make them public? It's not po
     }
 
     public void setChasers(String[] chasers) {
+       if(chasers.length !=3 || hasNull(chasers) || hasBlank(chasers)){
+            throw new IllegalArgumentException("Illegal chaser arguments");
+       }
         this.chasers = Arrays.copyOf(chasers, chasers.length);
+    }
+
+    public void checkArgument(String argument){
+        if (argument == null || argument.isBlank()){
+            throw new IllegalArgumentException("Argument cannot be null or blank");
+        }
     }
     
 
