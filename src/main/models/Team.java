@@ -101,7 +101,7 @@ Question: the constants are final, so why can't we make them public? It's not po
     } 
 
     public static boolean hasBlank(String[] array) {
-        return false;
+        return Arrays.stream(array).anyMatch((element) -> element.isBlank());
     }
 
 
