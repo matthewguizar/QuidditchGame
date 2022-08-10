@@ -22,10 +22,19 @@ public class Game {
     }
 
     public Team getTeam(String name){
-        return this.scoreboard.keySet().stream()
+        return  this.scoreboard.keySet().stream()
         .filter((key) -> key.getHouse().equals(name))
         .findFirst()
         .orElse(null);
+        
+        
+        // this.scoreboard.entrySet().stream()
+        // .filter((entry) -> entry.getKey().getHouse().equals(name))
+        // .findFirst()
+        // .orElse(null)
+        // .getKey();
+        
+        
        
     }
     
