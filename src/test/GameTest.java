@@ -40,6 +40,13 @@ public class GameTest {
        assertEquals(Game.getQuafflePoints() * 2, game.getScore(team));
     }
 
+    @Test
+    public void catchSnitchTest(){
+        Team team = game.getTeam("SLYTHERIN");
+        game.catchSnitch(team);
+        assertEquals(Game.getSnitchPoints(), game.getScore(team));
+    }
+
 
 
 

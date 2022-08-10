@@ -9,6 +9,7 @@ public class Game {
     private HashMap<Team, Integer> scoreboard;
     private static int gameCount;
     private static final int QUAFFLE_POINTS = 10;
+    private static final int SNITCH_POINTS = 150;
 
 
     public Game(Team home, Team away){
@@ -56,6 +57,9 @@ public class Game {
     public static int getQuafflePoints() {
         return QUAFFLE_POINTS;
     }
+    public static int getSnitchPoints() {
+        return SNITCH_POINTS;
+    }
 
     public String getPlaceholder(String play){
         //substring takes in two arguments (beginning index and ending index - 1)
@@ -70,6 +74,10 @@ public class Game {
     //scoring a quaffle is 10 points 
     public void quaffleScore(Team team){
         this.setScore(team, this.getScore(team) + QUAFFLE_POINTS);
+    }
+
+    public void catchSnitch(Team team){
+        this.setScore(team, this.getScore(team) + SNITCH_POINTS);
     }
 
 }
