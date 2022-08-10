@@ -8,6 +8,7 @@ public class Game {
 
     private HashMap<Team, Integer> scoreboard;
     private static int gameCount;
+    private static final int QUAFFLE_POINTS = 10;
 
 
     public Game(Team home, Team away){
@@ -52,6 +53,9 @@ public class Game {
         // .getKey();
        
     }
+    public static int getQuafflePoints() {
+        return QUAFFLE_POINTS;
+    }
 
     public String getPlaceholder(String play){
         //substring takes in two arguments (beginning index and ending index - 1)
@@ -63,5 +67,8 @@ public class Game {
         return play.replace("<" +placeholder+ ">", value);
     }
     
+    public void quaffleScore(Team team){
+        this.setScore(team, this.getScore(team) + QUAFFLE_POINTS);
+    }
 
 }
