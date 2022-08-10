@@ -20,6 +20,7 @@ public class Main {
                 new Team(data[1][0], data[1][1], data[1][2], new String[] {data[1][3], data[1][4], data[1][5]})
             );
             startGame();
+            printResult();
         } catch (FileNotFoundException e){
             System.out.println(e.getMessage());
         }
@@ -70,6 +71,13 @@ public class Main {
      *    2. Prints the winner: println("\n" + <winner team name> + " WINS!");
      *  
      */
+    public static void printResult(){
+       Team gryffindor = game.getTeam("GRYFFINDOR");
+       Team slytherin = game.getTeam("SLYTHERIN");
+       Team winner = game.getScore(gryffindor) > game.getScore(slytherin) ? gryffindor : slytherin;
+       System.out.println("\nGRYFFINDOR: "  + game.getScore(gryffindor) + " SLYTHERIN: " + game.getScore(slytherin));
+       System.out.println("\n" + winner + " WINS!");
+    }
 
     /**
      * Function name: wait
@@ -78,6 +86,7 @@ public class Main {
      * Inside the function:
      *  1. Make the code sleep for X seconds.
      */
+
 
 
   }
