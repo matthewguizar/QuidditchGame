@@ -79,10 +79,15 @@ public class Game {
     public void catchSnitch(Team team){
         this.setScore(team, this.getScore(team) + SNITCH_POINTS);
     }
+    //creating a team object and setting it equal to scoreboard turned into a keyset and then an array
     public Team getRandomTeam(){
         Object[] teams = scoreboard.keySet().toArray();
+        //range is set by length of teams object
         return (Team) teams[random(teams.length)];
     }
+
+    //using random method to help keep getRandomTeam method only perform one action
+    //method is returning random number based on range
     public int random(int range){
         return (int) (Math.random() * range);
     }
