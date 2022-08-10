@@ -26,8 +26,11 @@ public class GameTest {
     @Test
     public void getPlaceholderTest(){
         assertEquals("chaser", game.getPlaceholder("<chaser> gets the next pass"));
+    }
 
-
+    @Test
+    public void replacePlaceholderTest(){
+        assertEquals("Katie gets the next pass", game.replacePlaceholder("<chaser> gets the next pass", "chaser", "Katie"));
     }
 
 

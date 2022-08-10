@@ -58,6 +58,10 @@ public class Game {
         return play.substring(play.indexOf("<") + 1, play.indexOf(">"));
 
     }
+
+    public String replacePlaceholder(String play, String placeholder, String value){
+        return play.replace("<" +placeholder+ ">", value);
+    }
     
 
 }
