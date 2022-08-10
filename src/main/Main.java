@@ -1,9 +1,10 @@
 package src.main;
+import java.util.HashMap;
+
 import src.main.models.Game;
 import src.main.models.Team;
 
 public class Main {
-
     static Game game;
 
     public static void main(String[] args) {

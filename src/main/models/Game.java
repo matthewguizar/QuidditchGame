@@ -7,12 +7,14 @@ import java.util.stream.Collectors;
 public class Game {
 
     private HashMap<Team, Integer> scoreboard;
+    static int gameCount;
 
 
     public Game(Team home, Team away){
         this.scoreboard = new HashMap<>();
         scoreboard.put(new Team(home), 0);
         scoreboard.put(new Team(away), 0);
+        gameCount++;
     }
 
     public Integer getScore(Team team){
