@@ -79,5 +79,17 @@ public class Game {
     public void catchSnitch(Team team){
         this.setScore(team, this.getScore(team) + SNITCH_POINTS);
     }
+    public Team getRandomTeam(){
+        Object[] teams = scoreboard.keySet().toArray();
+        return (Team) teams[random(teams.length)];
+    }
+    public int random(int range){
+        return (int) (Math.random() * range);
+    }
+
+    public String simulate(String play){
+        String placeholder = getPlaceholder(play);
+        Team team = getRandomTeam();
+    }
 
 }
