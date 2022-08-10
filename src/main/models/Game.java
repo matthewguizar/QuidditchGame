@@ -54,6 +54,7 @@ public class Game {
     }
 
     public String getPlaceholder(String play){
+        //substring takes in two arguments (beginning index and ending index - 1)
         return play.substring(play.indexOf("<") + 1, play.indexOf(">"));
 
     }
