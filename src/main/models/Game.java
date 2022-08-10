@@ -67,6 +67,7 @@ public class Game {
         return play.replace("<" +placeholder+ ">", value);
     }
     
+    //scoring a quaffle is 10 points 
     public void quaffleScore(Team team){
         this.setScore(team, this.getScore(team) + QUAFFLE_POINTS);
     }
