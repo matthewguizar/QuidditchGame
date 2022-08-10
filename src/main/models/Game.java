@@ -95,6 +95,19 @@ public class Game {
     public String simulate(String play){
         String placeholder = getPlaceholder(play);
         Team team = getRandomTeam();
+
+        if (placeholder.equals(Team.getPositionChaser())){
+            quaffleScore(team);//score should update by 10 if placeholder equals "chaser"
+           String chaser = team.getChasers()[random(team.getChasers().length)];//getting a random chaser
+           return replacePlaceholder(play, placeholder, chaser);//returning play and replacing placeholder(chaser) with chaser name
+        } else if(placeholder.equals(Team.getPositionSeeker())){
+            catchSnitch(team);
+            return replacePlaceholder(play, placeholder, team.getSeeker());
+        } else if (placeholder.equals(Team.getPositionKeeper())){
+            return replacePlaceholder(play, placeholder, team.getSeeker());
+        } else {
+            return "";
+        }
     }
 
 }
