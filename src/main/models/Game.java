@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class Game {
 
     private HashMap<Team, Integer> scoreboard;
-    static int gameCount;
+    private static int gameCount;
 
 
     public Game(Team home, Team away){
@@ -16,7 +16,9 @@ public class Game {
         scoreboard.put(new Team(away), 0);
         gameCount++;
     }
-
+    public static int getGameCount() {
+        return gameCount;
+    }
     public Integer getScore(Team team){
         return scoreboard.get(team);
     }

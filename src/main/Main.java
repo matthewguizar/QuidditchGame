@@ -16,9 +16,9 @@ public class Main {
         new String[] {"Bridget", "Harper", "Malcolm"});
 
         Game game = new Game(home, away);
-        game.getScore(home);
-        game.setScore(away, 0);
-        System.out.println(game.getTeam("GRYFFINDOR"));
+        Game game2 = new Game(home, away);
+        Game game3 = new Game(home, away);
+        System.out.println(Game.getGameCount());
 
         
             
