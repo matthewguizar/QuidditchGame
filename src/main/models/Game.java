@@ -1,6 +1,8 @@
 package src.main.models;
 
 import java.util.HashMap;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Game {
 
@@ -24,8 +26,13 @@ public class Game {
     public Team getTeam(String name){
         return  this.scoreboard.keySet().stream()
         .filter((key) -> key.getHouse().equals(name))
-        .findFirst()
-        .orElse(null);
+        .collect((Collectors.toList()))
+        .get(0);
+
+        // this.scoreboard.keySet().stream()
+        // .filter((key) -> key.getHouse().equals(name))
+        // .findFirst()
+        // .orElse(null);
         
         
         // this.scoreboard.entrySet().stream()
