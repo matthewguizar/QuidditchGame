@@ -29,6 +29,12 @@ public class Game {
         .collect((Collectors.toList()))
         .get(0);
 
+        // this.scoreboard.entrySet().stream()
+        // .filter((entry) -> entry.getKey().getHouse().equals(name))
+        // .collect((Collectors.toList()))
+        // .get(0)
+        // .getKey();
+
         // this.scoreboard.keySet().stream()
         // .filter((key) -> key.getHouse().equals(name))
         // .findFirst()
