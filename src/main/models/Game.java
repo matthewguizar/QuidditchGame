@@ -16,6 +16,14 @@ public class Game {
     public Integer getScore(Team team){
         return scoreboard.get(team);
     }
+
+    public void setScore(Team team, Integer score){
+        scoreboard.put(team, score);
+    }
+
+    public Team getTeam(String name){
+        return null;
+    }
     
 
 }

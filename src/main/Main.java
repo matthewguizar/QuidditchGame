@@ -7,11 +7,22 @@ public class Main {
     static Game game;
 
     public static void main(String[] args) {
-        System.out.println(new Team("GRYFFINDOR", "Oliver", "Harry", 
-        new String[] {"Angelina", "Ginny", "Katie"}));
+
+        Team home = new Team("GRYFFINDOR", "Oliver", "Harry", 
+        new String[] {"Angelina", "Ginny", "Katie"});
   
-       System.out.println(new Team("SLYTHERIN", "Vincent",  "Draco", 
-        new String[] {"Bridget", "Harper", "Malcolm"}));
+       Team away = new Team("SLYTHERIN", "Vincent",  "Draco", 
+        new String[] {"Bridget", "Harper", "Malcolm"});
+
+        Game game = new Game(home, away);
+        game.getScore(home);
+        game.setScore(away, 0);
+        System.out.println(game.getScore(home));
+        System.out.println(game.getScore(away));
+
+        
+            
+        
         
     }
 
