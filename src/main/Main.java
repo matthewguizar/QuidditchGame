@@ -17,8 +17,7 @@ public class Main {
         Game game = new Game(home, away);
         game.getScore(home);
         game.setScore(away, 0);
-        System.out.println(game.getScore(home));
-        System.out.println(game.getScore(away));
+        System.out.println(game.getTeam("GRYFFINDOR"));
 
         
             
