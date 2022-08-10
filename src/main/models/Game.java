@@ -52,6 +52,11 @@ public class Game {
         // .getKey();
        
     }
+
+    public String getPlaceholder(String play){
+        return play.substring(play.indexOf("<") + 1, play.indexOf(">"));
+
+    }
     
 
 }
