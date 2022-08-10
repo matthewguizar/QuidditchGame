@@ -3,6 +3,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import src.main.models.Game;
 import src.main.models.Team;
@@ -58,6 +59,7 @@ public class Main {
         FileInputStream fis = new FileInputStream(PLAYS_FILE);
         Scanner scanFile = new Scanner(fis);
         while (scanFile.hasNextLine()) {
+            wait(3);
             System.out.println("\n" + game.simulate(scanFile.nextLine() + "\n"));
         }
         scanFile.close();
@@ -86,6 +88,13 @@ public class Main {
      * Inside the function:
      *  1. Make the code sleep for X seconds.
      */
+    public static void wait(int sec){
+        try {
+            TimeUnit.SECONDS.sleep(sec);
+        } catch (InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+    }
 
 
 
