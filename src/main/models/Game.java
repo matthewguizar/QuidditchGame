@@ -26,6 +26,9 @@ public class Game {
     }
 
     public void setScore(Team team, Integer score){
+        if (team == null ){
+            throw new IllegalArgumentException("cannot add null to scoreboard");
+        }
         scoreboard.put(team, score);
     }
 
