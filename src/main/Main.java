@@ -13,13 +13,16 @@ public class Main {
     static final String PLAYS_FILE = "src/main/plays.txt";
 
     public static void main(String[] args) {
+        try{
+            String[][] data = getData();
+            game = new Game(
+                new Team(data[0][0], data[0][1], data[0][2], new String[] {data[0][3], data[0][4], data[0][5]}),
+                new Team(data[1][0], data[1][1], data[1][2], new String[] {data[1][3], data[1][4], data[1][5]})
+            );
+        } catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
+        }
 
-        
-
-        
-            
-        
-        
     }
 
 
@@ -36,8 +39,8 @@ public class Main {
        Scanner scanFile = new Scanner(fis); //reading data using scanner (fis)
        String[] lines = new String[] {scanFile.nextLine(), scanFile.nextLine()};
        scanFile.close();
-
-       return new String[][] {lines[0].split(","), lines[1].split(",")};
+        //creating an two arrays from each element from lines array and creating 2d array with those values
+       return new String[][] {lines[0].split(","), lines[1].split(",")};//two rows each row has Team data
     }
 
 
